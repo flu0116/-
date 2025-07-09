@@ -16,9 +16,9 @@ public class Qes2 {
 		
 		double d = 0.0d; // 倍精度浮動小数点数型を宣言し、初期化する
 		
-		char c = 'a'; // 文字型を宣言し、初期化する
+		char c = '\u0000'; // 文字型を宣言し、初期化する
 		
-		String str = "b"; // 文字列型を宣言し、初期化する
+		String str = "null"; // 文字列型を宣言し、初期化する
 		
 		boolean bool = false; // ブーリアン型を宣言し、初期化する
 
