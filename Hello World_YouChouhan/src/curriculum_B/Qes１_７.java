@@ -35,12 +35,15 @@ public class Qes１_７ {
 		}
 		
 		String[] hands = {"「グー」" , "「チョキ」" , "「パー」"} ; // 配列でじゃけんの手を用意する
-		String userHand = hands[2]; // ユーザーの手を「パー」
-		String computerHand = hands[0]; // 相手の手を「グー」
-		
+		Random rand = new Random(); // ランダムを宣言する
+	
 		int count = 0; // 試行回数を宣言し、初期化する
 		
 		while (true) { // 条件をクリアまでループ
+			String userHand = hands[rand.nextInt(3)]; // ユーザーの手を3つの配列でランダムで出す
+			String computerHand = hands[rand.nextInt(3)]; // 相手の手を3つの配列でランダムで出す
+			
+			
 		    System.out.println(username + "の手は" + userHand); // ユーザーの手を出力
 		    System.out.println("相手の手は" + computerHand); // 相手の手を出力
 		
@@ -96,7 +99,6 @@ public class Qes１_７ {
 //      Q6 入力した商品の残り台数が出力されるシステムを下記の条件で作成してください
 		
 		String input = scanner.nextLine(); // 入力を受け取る
-		Random rand = new Random(); // ランダムを宣言する
 		
 		System.out.println("商品を「、」区切りで入力してください："); // 入力の説明を出力する
 		String[] goods = input.split("、"); // 『、』で入力を分割して、配列を作る
@@ -135,6 +137,10 @@ public class Qes１_７ {
 		
 		do { // do-while文、最低一回実行する
 			System.out.println("生徒の人数を入力してくだい（２以上）:"); // 入力前の提示
+		    while (!scanner.hasNextInt()) { // 数値で入力チェック
+		    	System.out.println("数値で入力してください");
+		    	scanner.next();
+		    }
 		} while (studentCount < 2); // 分岐の条件式
 		
 		int [][] scores = new int[studentCount][4]; // 二次元配列で生徒番号と各科目を組合する
@@ -178,6 +184,10 @@ public class Qes１_７ {
 		System.out.println("数学の平均点は" + String.format("%.2f", avgMath) + "点です"); // 数学の平均点を出力する
 		System.out.println("理科の平均点は" + String.format("%.2f", avgScience) + "点です"); // 理科の平均点を出力する
 		System.out.println("社会の平均点は" + String.format("%.2f", avgSocial) + "点です"); // 社会の平均点を出力する
+		
+		double total = totalEnglish + totalMath + totalScience + totalSocial; // 全体の点数の計算式
+		double avgAll = total / (studentCount * 4.0); // 全体の平均点計算式
+		System.out.println("クラス全体の平均点は" + String.format("%.2f", avgAll) + "点です"); // 全体の平均点を出力する
 
 	}
 

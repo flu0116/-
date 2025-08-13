@@ -18,7 +18,7 @@ public class Qes2 {
 		
 		char c = '\u0000'; // 文字型を宣言し、初期化する
 		
-		String str = "null"; // 文字列型を宣言し、初期化する
+		String str = null; // 文字列型を宣言し、初期化する
 		
 		boolean bool = false; // ブーリアン型を宣言し、初期化する
 
